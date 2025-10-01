@@ -1,13 +1,22 @@
 import OpenAI from 'openai';
 import type { ParsedEvent } from '../types/database.types';
 
-const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true,
-});
-
 export class OpenAIService {
+  private static getClient(): OpenAI {
+    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+
+    if (!apiKey || apiKey === 'your-openai-api-key-here') {
+      throw new Error('OpenAI API key not configured. Please add your API key to the .env file.');
+    }
+
+    return new OpenAI({
+      apiKey,
+      dangerouslyAllowBrowser: true,
+    });
+  }
+
   static async parseNaturalLanguage(text: string): Promise<{ events: ParsedEvent[], tokensUsed: number }> {
+    const openai = this.getClient();
     const currentYear = new Date().getFullYear();
 
     const prompt = `Parse the following text and extract calendar events. Return a JSON array of events with the following structure:
@@ -44,6 +53,7 @@ export class OpenAIService {
   }
 
   static async parseImage(imageBase64: string): Promise<{ events: ParsedEvent[], tokensUsed: number }> {
+    const openai = this.getClient();
     const currentYear = new Date().getFullYear();
 
     const prompt = `Analyze this image and extract any calendar events, schedules, or dates mentioned. Return a JSON array of events with the following structure:
