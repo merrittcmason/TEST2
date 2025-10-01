@@ -64,8 +64,9 @@
 }
 
 .calendar-day.today {
-  background-color: rgba(37, 99, 235, 0.1);
+  background-color: var(--bg-tertiary);
   border-color: var(--accent-primary);
+  border-width: 2px;
 }
 
 .day-number {
@@ -77,8 +78,8 @@
 .event-badge {
   font-size: 0.7rem;
   padding: 4px 6px;
-  background-color: var(--accent-primary);
-  color: white;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
   border-radius: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
