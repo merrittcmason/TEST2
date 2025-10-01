@@ -1,0 +1,105 @@
+.subscription-card {
+  margin: 20px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card-header h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.tier-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.usage-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.usage-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.usage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.usage-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.usage-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--bg-tertiary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-hover));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.usage-subtext {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+}
+
+.upload-indicator {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.upload-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: all var(--transition);
+}
+
+.upload-dot.available {
+  background-color: var(--success);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.upload-dot.used {
+  background-color: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
+}
+
+@media (max-width: 480px) {
+  .subscription-card {
+    margin: 16px;
+  }
+
+  .card-header h3 {
+    font-size: 1.25rem;
+  }
+}

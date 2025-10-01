@@ -1,0 +1,121 @@
+.week-at-a-glance {
+  margin: 20px;
+}
+
+.week-at-a-glance h2 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.week-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.week-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.days-container {
+  display: flex;
+  gap: 12px;
+  padding: 4px;
+}
+
+.day-card {
+  flex-shrink: 0;
+  width: 70px;
+  padding: 12px 8px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-height: 100px;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.day-card:hover {
+  background-color: var(--bg-tertiary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-md);
+}
+
+.day-card.today {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.day-card.today:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.day-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.day-card.today .day-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.day-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.day-number.today-number {
+  color: white;
+}
+
+.event-indicators {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.event-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-primary);
+  border-radius: 50%;
+}
+
+.day-card.today .event-dot {
+  background-color: white;
+}
+
+.event-more {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+.day-card.today .event-more {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 480px) {
+  .week-at-a-glance {
+    margin: 16px;
+  }
+
+  .day-card {
+    width: 65px;
+    min-height: 95px;
+  }
+}
