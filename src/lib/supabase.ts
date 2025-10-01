@@ -7,7 +7,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Missing Supabase environment variables');
 }
 
-const EXPECTED_SUPABASE_URL = 'https://rlezlvfiugblclwhkkqg.supabase.co';
+const EXPECTED_SUPABASE_URL = 'https://0ec90b57d6e95fcbda19832f.supabase.co';
 
 if (typeof window !== 'undefined') {
   const storedKeys = Object.keys(localStorage).filter(key =>
