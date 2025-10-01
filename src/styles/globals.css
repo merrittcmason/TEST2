@@ -131,12 +131,14 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: var(--accent-primary);
-  color: white;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border: 2px solid var(--text-primary);
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--accent-hover);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   transform: translateY(-1px);
 }
 
